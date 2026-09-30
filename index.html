@@ -98,7 +98,6 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;op
 .shot{position:relative;overflow:hidden;background:var(--bordo);isolation:isolate}
 .shot img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.15) brightness(1.05);mix-blend-mode:multiply}
 .shot--color img{filter:none;mix-blend-mode:normal}
-.shot video{width:100%;height:100%;object-fit:cover;display:block}
 .shot::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(rgba(22,17,15,.25) 1px,transparent 1.5px) 0 0/5px 5px;mix-blend-mode:multiply;opacity:.5}
 .shot .ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;color:var(--creme);
   background:
@@ -200,9 +199,8 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;op
 /* ---------- A Casa ---------- */
 .casa{background:var(--papel);padding:clamp(80px,10vw,140px) 0;--next:var(--creme)}
 .casa .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,6vw,90px);align-items:center}
-.collage{position:relative;min-height:600px}
-.collage .c1{position:absolute;left:0;top:40px;width:80%;aspect-ratio:3/2;border:2px solid var(--vinil);box-shadow:10px 10px 0 var(--bordo);transform:rotate(-1.5deg)}
-.collage .c2{position:absolute;right:0;bottom:-40px;width:36%;aspect-ratio:496/830;border:2px solid var(--vinil);box-shadow:var(--shadow);transform:rotate(2.5deg)}
+.collage{position:relative;min-height:460px}
+.collage .c1{position:absolute;left:0;top:40px;width:92%;aspect-ratio:3/2;border:2px solid var(--vinil);box-shadow:10px 10px 0 var(--bordo);transform:rotate(-1.5deg)}
 .collage .tape{position:absolute;width:110px;height:28px;background:rgba(227,167,47,.75);z-index:3;top:-10px;left:30%;transform:rotate(-6deg)}
 .collage .vinyl{position:absolute;width:150px;left:62%;top:-30px;z-index:0}
 .casa h2{font-size:clamp(40px,5.4vw,78px);margin:20px 0 6px}
@@ -328,7 +326,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;op
   .svc:nth-child(even){transform:rotate(.5deg)}
   .svc--hit{order:-1}
   .casa .wrap{grid-template-columns:1fr}
-  .collage{min-height:0;aspect-ratio:1/1.05;margin-bottom:40px}
+  .collage{min-height:0;aspect-ratio:1.4/1;margin-bottom:10px}
   .crit-head{grid-template-columns:1fr}
   .score{justify-self:start}
   .reviews{grid-template-columns:1fr}
@@ -533,9 +531,6 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;op
         <img src="assets/equipe.png" alt="Rodrigo Sobreira (à esquerda) e Luiz Ricardo “Magrelo” (à direita)" onerror="this.remove()">
         <div class="ph"><span>Imagem 3 · foto real da equipe</span></div>
       </figure>
-      <figure class="shot shot--color c2 clip-img parallax" data-speed="0.12" style="margin:0">
-        <video src="assets/casa.mp4" poster="assets/casa-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="O Magrelo arrumando a casa e chamando pra cadeira"></video>
-      </figure>
     </div>
     <div class="body">
       <span class="badge rv">Desde 2015</span>
@@ -671,7 +666,6 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;op
   document.documentElement.classList.add('js');
 
   if(reduce){
-    document.querySelectorAll('video[autoplay]').forEach(function(v){v.pause();v.removeAttribute('autoplay')});
     /* Apenas opacidade sutil */
     gsap.utils.toArray('.rv,.ln > span').forEach(function(el){
       gsap.fromTo(el,{opacity:0},{opacity:1,duration:.4,scrollTrigger:{trigger:el,start:'top 92%'}});
