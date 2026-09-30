@@ -15,7 +15,6 @@ Enquanto o arquivo não existir, aparece um placeholder bordô com o rótulo da 
 | `assets/luiz.jpg`, `assets/rodrigo.jpg` | Mini-perfis da equipe (quadradas) |
 
 ## A confirmar com o cliente
-- Horário de funcionamento (seção Turnê marca "a confirmar")
 - Prints do Google/Booksy com nome para trocar "Cliente" nos depoimentos 2 e 3
 - Bordô exato a partir do logo original (`--bordo` no `:root`)
 - Fotos reais (logo, equipe, espaço)
