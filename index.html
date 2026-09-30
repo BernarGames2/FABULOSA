@@ -54,7 +54,9 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;op
   -webkit-mask:radial-gradient(circle 9px at 0 50%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 9px at 100% 50%,#0000 98%,#000) right/51% 100% no-repeat;
           mask:radial-gradient(circle 9px at 0 50%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 9px at 100% 50%,#0000 98%,#000) right/51% 100% no-repeat;
   transition:background-color .25s,color .25s,transform .25s cubic-bezier(.2,.8,.2,1)}
-.ticket::after{content:"";position:absolute;top:8px;bottom:8px;right:2.9em;border-left:1.5px dashed currentColor;opacity:.35}
+.ticket:not(.ticket--outline):not(.fab){padding-right:3.4em}
+.hdr .ticket{padding-right:1.3em!important}
+.ticket::after{content:"";position:absolute;top:8px;bottom:8px;right:2.2em;border-left:1.5px dashed currentColor;opacity:.35}
 .ticket .tk-stub{padding-left:1.6em}
 .ticket:hover{--bg:var(--bordo);--fg:var(--creme)}
 .ticket svg{width:1.25em;height:1.25em;flex:none}
@@ -158,6 +160,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;op
 .price-cut s{opacity:.7}
 .album .shot{min-height:520px;border-left:2px solid var(--vinil)}
 .album .shot img{filter:none;mix-blend-mode:normal}
+.hero-art .shot img{object-position:40% 30%}
 
 /* ---------- Setlist (pinned) ---------- */
 .setlist{background:var(--creme);padding:clamp(80px,9vw,120px) 0 60px;overflow:hidden;--next:var(--papel)}
@@ -416,8 +419,8 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;op
     </div>
 
     <div class="hero-art" aria-hidden="false">
-      <figure class="shot clip-img" data-cursor="VER" style="margin:0">
-        <img src="assets/hero.jpg" alt="Barbeiro finalizando a linha da barba de um cliente com navalha" onerror="this.remove()">
+      <figure class="shot shot--color clip-img" data-cursor="VER" style="margin:0">
+        <img src="assets/fachada.webp" alt="Fachada da Fabulosa Barbearia no número 46, com letreiro bordô e poste de barbeiro" onerror="this.remove()">
         <div class="ph"><span>Imagem 1 · barbeiro finalizando a barba (duotone bordô/preto)</span></div>
       </figure>
       <div class="seal parallax" data-speed="-0.15"><svg><use href="#seal-art"/></svg></div>
@@ -459,7 +462,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;op
     <p class="price-cut rv">Separado: <s>R$ 70 + R$ 70 = R$ 140</s> · No combo: R$ 130</p>
   </div>
   <figure class="shot shot--color clip-img" data-cursor="VER" style="margin:0">
-    <img src="assets/interior.jpg" alt="Interior da Fabulosa: cadeiras antigas de barbeiro diante de espelhos, parede bordô" onerror="this.remove()">
+    <img src="assets/interior.webp" alt="Interior da Fabulosa: cadeiras de cinema verdes, estantes de madeira, cadeira de barbeiro e bancadas" onerror="this.remove()">
     <div class="ph"><span>Imagem 2 · interior da barbearia</span></div>
   </figure>
 </section>
