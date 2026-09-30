@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fabulosa Barbearia · Fundinho, Uberlândia</title>
+<meta name="description" content="A barbearia mais charmosa da cidade. Corte e barba no Fundinho, Uberlândia/MG, desde 2015. Nota 5.0 com 166 avaliações no Booksy.">
+<meta name="theme-color" content="#8C2B4B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bordo:#8C2B4B; --bordo-d:#6F1F3A; --mostarda:#E3A72F; --mostarda-d:#C98C17;
+  --creme:#F0E4CC; --papel:#E2D0AE; --rosa:#E9CFD3;
+  --vinil:#16110F; --sec:#6E5B52;
+  --f-display:"Anton","Impact","Haettenschweiler","Arial Narrow Bold",sans-serif;
+  --f-serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --f-mono:"Space Mono",ui-monospace,"Courier New",monospace;
+  --f-body:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --shadow:5px 5px 0 var(--vinil);
+  --gutter:clamp(16px,4vw,56px);
+  --wa:"https://wa.me/553432575427";
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;background:var(--creme);color:var(--vinil);font-family:var(--f-body);font-size:17px;line-height:1.55;overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;text-transform:uppercase;line-height:.92;letter-spacing:.005em;margin:0}
+p{margin:0 0 1em}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--gutter)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ---------- Textura: xerox + halftone (SVG inline, sem assets) ---------- */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.16;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .09 0 0 0 0 .07 0 0 0 0 .06 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.halftone{background-image:radial-gradient(rgba(22,17,15,.13) 1px,transparent 1.4px);background-size:6px 6px}
+
+/* ---------- Utility / badges ---------- */
+.mono{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.08em;font-size:.78rem}
+.badge{display:inline-flex;align-items:center;gap:.6em;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;
+  padding:.45em .9em;border:1.5px solid currentColor;background:transparent;transform:rotate(-1.2deg);align-self:flex-start;width:max-content;max-width:100%}
+.badge::before{content:"";width:.55em;height:.55em;border-radius:50%;background:var(--bordo)}
+.badge--light{color:var(--creme)} .badge--light::before{background:var(--mostarda)}
+.accent{color:var(--mostarda)}
+.serif{font-family:var(--f-serif);font-style:italic;font-weight:400}
+
+/* ---------- Botão-ingresso ---------- */
+.ticket{--bg:var(--mostarda);--fg:var(--vinil);--notch:var(--creme);
+  position:relative;display:inline-flex;align-items:center;gap:.6em;padding:1em 1.7em;min-height:52px;
+  font-family:var(--f-mono);font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;
+  color:var(--fg);background:var(--bg);border:0;cursor:pointer;
+  -webkit-mask:radial-gradient(circle 9px at 0 50%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 9px at 100% 50%,#0000 98%,#000) right/51% 100% no-repeat;
+          mask:radial-gradient(circle 9px at 0 50%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 9px at 100% 50%,#0000 98%,#000) right/51% 100% no-repeat;
+  transition:background-color .25s,color .25s,transform .25s cubic-bezier(.2,.8,.2,1)}
+.ticket::after{content:"";position:absolute;top:8px;bottom:8px;right:2.9em;border-left:1.5px dashed currentColor;opacity:.35}
+.ticket .tk-stub{padding-left:1.6em}
+.ticket:hover{--bg:var(--bordo);--fg:var(--creme)}
+.ticket svg{width:1.25em;height:1.25em;flex:none}
+.ticket--outline{--bg:transparent;box-shadow:inset 0 0 0 2px var(--vinil)}
+.ticket--outline::after{display:none}
+.ticket--outline:hover{--bg:var(--vinil);--fg:var(--creme)}
+.on-dark .ticket--outline{--fg:var(--creme);box-shadow:inset 0 0 0 2px var(--creme)}
+.on-dark .ticket--outline:hover{--bg:var(--creme);--fg:var(--vinil)}
+.on-dark .ticket:not(.ticket--outline):hover{--bg:var(--creme);--fg:var(--bordo)}
+.ticket--lg{font-size:.95rem;padding:1.25em 2.1em}
+
+/* ---------- Header ---------- */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(240,228,204,.92);backdrop-filter:blur(6px);border-bottom:2px solid var(--vinil)}
+.hdr .wrap{display:flex;align-items:center;gap:24px;height:74px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex:none}
+.logo{width:52px;height:52px;border-radius:50%;background:var(--bordo);flex:none;overflow:hidden;display:grid;place-items:center;
+  color:var(--creme);font-family:var(--f-mono);font-size:.5rem;text-align:center;line-height:1.1;letter-spacing:.05em}
+.logo img{width:100%;height:100%;object-fit:cover}
+.brand b{font-family:var(--f-display);font-weight:400;font-size:1.55rem;line-height:.9;letter-spacing:.02em;display:block}
+.brand small{font-family:var(--f-mono);font-size:.6rem;letter-spacing:.2em;color:var(--sec);display:block;margin-top:3px}
+.nav{display:flex;gap:28px;margin:0 auto}
+.nav a{font-weight:500;text-decoration:none;font-size:.95rem;position:relative;padding:4px 0}
+.nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--bordo);transition:right .25s}
+.nav a:hover::after{right:0}
+.hdr-phone{font-family:var(--f-mono);font-size:.8rem;text-decoration:none;white-space:nowrap}
+.hdr .ticket{padding:.8em 1.3em;min-height:44px;font-size:.72rem}
+.hdr .ticket::after{display:none}
+
+/* ---------- Bordas rasgadas / picotadas ---------- */
+.torn-b{position:relative}
+.torn-b::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:22px;z-index:3;background:var(--next,var(--creme));
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 22' preserveAspectRatio='none'%3E%3Cpath d='M0 22V12l30-6 22 7 40-9 26 8 34-10 30 9 44-6 20 5 38-8 30 10 42-7 24 5 36-9 28 8 40-4 30 6 44-10 26 9 34-5 30 7 40-9 22 6 38-4 30 8 36-9 28 6 42-7 26 9 34-6 30 5 40-8 28 7 36-5 30 9 32-10 36 8 34-6V22z'/%3E%3C/svg%3E") bottom/100% 100%;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 22' preserveAspectRatio='none'%3E%3Cpath d='M0 22V12l30-6 22 7 40-9 26 8 34-10 30 9 44-6 20 5 38-8 30 10 42-7 24 5 36-9 28 8 40-4 30 6 44-10 26 9 34-5 30 7 40-9 22 6 38-4 30 8 36-9 28 6 42-7 26 9 34-6 30 5 40-8 28 7 36-5 30 9 32-10 36 8 34-6V22z'/%3E%3C/svg%3E") bottom/100% 100%}
+.perf-t{position:relative}
+.perf-t::before{content:"";position:absolute;left:0;right:0;top:-9px;height:18px;z-index:3;
+  background:radial-gradient(circle 7px at 12px 9px,var(--prev,var(--creme)) 98%,transparent) 0 0/24px 18px repeat-x}
+
+/* ---------- Imagens (slots) ---------- */
+.shot{position:relative;overflow:hidden;background:var(--bordo);isolation:isolate}
+.shot img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.15) brightness(1.05);mix-blend-mode:multiply}
+.shot--color img{filter:none;mix-blend-mode:normal}
+.shot::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(rgba(22,17,15,.25) 1px,transparent 1.5px) 0 0/5px 5px;mix-blend-mode:multiply;opacity:.5}
+.shot .ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;color:var(--creme);
+  background:
+   radial-gradient(ellipse 60% 50% at 65% 40%,rgba(240,228,204,.18),transparent 70%),
+   repeating-linear-gradient(135deg,rgba(22,17,15,.18) 0 2px,transparent 2px 14px),
+   linear-gradient(160deg,var(--bordo),var(--bordo-d) 60%,var(--vinil))}
+.shot .ph span{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85;max-width:28ch}
+.shot img + .ph{display:none}
+.clip-reveal{clip-path:inset(0 0 0 0)}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;padding:118px 0 0;background:var(--creme);--next:var(--bordo);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:0;align-items:stretch;min-height:calc(100vh - 74px);min-height:calc(100svh - 74px)}
+.hero-copy{position:relative;z-index:4;padding:40px 0 90px;display:flex;flex-direction:column;justify-content:center}
+.hero h1{font-size:clamp(44px,8.6vw,120px);margin:22px 0 26px;width:118%;}
+.split .ln{display:block;overflow:hidden;padding-bottom:.04em}
+.split .ln > span{display:block}
+.hero-sub{max-width:34em;font-size:1.1rem;color:var(--sec)}
+.hero-sub strong{color:var(--vinil)}
+.ctas{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0 22px}
+.proof{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--f-mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.stars{color:var(--bordo);letter-spacing:.1em;font-size:1rem}
+.hero-art{position:relative}
+.hero-art::before{content:"";position:absolute;top:-118px;bottom:0;left:-22%;right:calc(-1 * var(--gutter) - 50vw);background:var(--bordo);clip-path:polygon(28% 0,100% 0,100% 100%,0 100%);z-index:0}
+.hero-art .shot{position:absolute;z-index:1;top:30px;right:0;bottom:70px;left:6%;box-shadow:10px 10px 0 var(--vinil);border:2px solid var(--vinil);transform:rotate(1.2deg)}
+.seal{position:absolute;z-index:3;width:138px;height:138px;left:-8%;top:9%;}
+.seal svg{width:100%;height:100%;animation:spin 26s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.float-card{position:absolute;z-index:3;display:flex;align-items:center;gap:12px;background:var(--creme);border:2px solid var(--vinil);box-shadow:var(--shadow);padding:10px 14px 10px 10px;max-width:250px}
+.float-card b{display:block;font-family:var(--f-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em}
+.float-card small{font-size:.82rem;color:var(--sec);line-height:1.3;display:block}
+.fc1{left:-4%;bottom:130px;transform:rotate(-2.5deg)}
+.fc2{right:-10px;top:52%;transform:rotate(2deg)}
+.chip{width:40px;height:40px;flex:none;display:grid;place-items:center;background:var(--papel);border:1.5px solid var(--vinil);color:var(--bordo)}
+.chip svg{width:22px;height:22px}
+.deco{position:absolute;z-index:3;pointer-events:none;filter:drop-shadow(3px 4px 0 rgba(22,17,15,.35))}
+.deco svg{width:100%;height:100%}
+.d-razor{width:150px;right:18%;top:2%;transform:rotate(-24deg)}
+.d-brush{width:74px;left:2%;bottom:18px;transform:rotate(14deg)}
+.d-pick{width:46px;right:3%;bottom:28px;transform:rotate(-18deg)}
+
+/* ---------- Marquee ---------- */
+.marquee{background:var(--vinil);color:var(--creme);overflow:hidden;white-space:nowrap;border-block:2px solid var(--vinil);transform:rotate(-1deg);margin:-6px -10px 0;position:relative;z-index:5}
+.marquee .track{display:inline-flex;animation:mq 38s linear infinite;padding:14px 0}
+.marquee span{font-family:var(--f-display);font-size:1.6rem;letter-spacing:.04em;padding:0 22px}
+.marquee i{color:var(--mostarda);font-style:normal}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- Álbum completo ---------- */
+.album{display:grid;grid-template-columns:1fr 1fr;background:var(--bordo);color:var(--creme);--next:var(--creme)}
+.album-copy{padding:clamp(56px,8vw,120px) var(--gutter) clamp(72px,9vw,130px) max(var(--gutter),calc((100vw - 1280px)/2 + var(--gutter)))}
+.album h2{font-size:clamp(40px,5.6vw,84px);margin:24px 0 22px}
+.album h2 em{font-style:normal;color:var(--mostarda);display:block}
+.album p{max-width:32em;color:rgba(240,228,204,.85)}
+.checks{list-style:none;padding:0;margin:26px 0 34px;display:grid;gap:14px}
+.checks li{display:flex;gap:14px;align-items:flex-start;font-weight:500}
+.checks li::before{content:"";flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--mostarda);
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E3A72F' stroke-width='3'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/15px no-repeat}
+.price-cut{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.06em;color:rgba(240,228,204,.7);margin-top:18px;text-transform:uppercase}
+.price-cut s{opacity:.7}
+.album .shot{min-height:520px;border-left:2px solid var(--vinil)}
+.album .shot img{filter:none;mix-blend-mode:normal}
+
+/* ---------- Setlist (pinned) ---------- */
+.setlist{background:var(--creme);padding:clamp(80px,9vw,120px) 0 60px;overflow:hidden;--next:var(--papel)}
+.set-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:44px}
+.set-head h2{font-size:clamp(44px,7vw,104px);margin-top:18px}
+.set-head p{font-family:var(--f-serif);font-style:italic;font-size:1.35rem;color:var(--sec);margin:10px 0 0}
+.set-hint{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sec)}
+.rail{display:flex;gap:26px;padding:10px var(--gutter) 30px;width:max-content;will-change:transform}
+.svc{position:relative;width:320px;flex:none;background:var(--creme);border:2px solid var(--vinil);box-shadow:var(--shadow);padding:22px 22px 26px;display:flex;flex-direction:column;
+  transition:transform .2s,background-color .2s}
+.svc:nth-child(odd){transform:rotate(-.8deg)} .svc:nth-child(even){transform:rotate(.7deg) translateY(14px)}
+.svc:hover{background:var(--rosa)}
+.svc:nth-child(odd):hover{transform:rotate(-.8deg) translate(2px,-2px)}
+.svc:nth-child(even):hover{transform:rotate(.7deg) translate(2px,12px)}
+.svc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:26px}
+.svc-no{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.12em;color:var(--sec)}
+.svc h3{font-size:2.1rem;margin-bottom:10px}
+.svc p{font-size:.95rem;color:var(--sec);margin-bottom:22px}
+.svc-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:baseline;border-top:1.5px dashed var(--vinil);padding-top:14px;font-family:var(--f-mono);text-transform:uppercase}
+.svc-foot b{font-size:1.4rem}
+.svc-foot span{font-size:.72rem;letter-spacing:.08em;color:var(--sec)}
+.svc--hit{background:var(--bordo);color:var(--creme);width:380px}
+.svc--hit:hover{background:var(--bordo-d)}
+.svc--hit p,.svc--hit .svc-no,.svc--hit .svc-foot span{color:rgba(240,228,204,.78)}
+.svc--hit .svc-foot{border-color:var(--creme)}
+.svc--hit .chip{background:var(--mostarda);color:var(--vinil)}
+.svc--hit .tag{position:absolute;top:-14px;right:18px;background:var(--mostarda);color:var(--vinil);font-family:var(--f-mono);font-size:.68rem;font-weight:700;letter-spacing:.1em;padding:5px 10px;border:2px solid var(--vinil);transform:rotate(3deg)}
+.svc--hit a{color:var(--mostarda);font-family:var(--f-mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;margin-bottom:18px;display:inline-block}
+.svc--hit a:hover{text-decoration:underline}
+.extras{margin-top:28px;display:grid;gap:10px;font-family:var(--f-mono);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em}
+.extras div{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;padding:12px 0;border-top:1.5px solid var(--vinil)}
+.extras em{font-style:normal;color:var(--bordo);font-weight:700;min-width:120px}
+.extras span b{color:var(--bordo)}
+.set-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+
+/* ---------- A Casa ---------- */
+.casa{background:var(--papel);padding:clamp(80px,10vw,140px) 0;--next:var(--creme)}
+.casa .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,6vw,90px);align-items:center}
+.collage{position:relative;min-height:600px}
+.collage .c1{position:absolute;left:0;top:0;width:78%;aspect-ratio:4/5;border:2px solid var(--vinil);box-shadow:10px 10px 0 var(--bordo);transform:rotate(-1.5deg)}
+.collage .c2{position:absolute;right:0;bottom:0;width:48%;aspect-ratio:4/3;border:2px solid var(--vinil);box-shadow:var(--shadow);transform:rotate(2.5deg)}
+.collage .tape{position:absolute;width:110px;height:28px;background:rgba(227,167,47,.75);z-index:3;top:-10px;left:30%;transform:rotate(-6deg)}
+.collage .vinyl{position:absolute;width:150px;left:62%;top:-30px;z-index:0}
+.casa h2{font-size:clamp(40px,5.4vw,78px);margin:20px 0 6px}
+.casa .role{font-family:var(--f-serif);font-style:italic;font-size:1.5rem;color:var(--bordo);margin-bottom:26px}
+.casa .body p{color:#3b2f2a;max-width:34em}
+.manifesto{font-family:var(--f-serif);font-style:italic;font-size:clamp(1.3rem,2vw,1.6rem);line-height:1.3;border-left:4px solid var(--bordo);padding-left:18px;margin:26px 0;color:var(--vinil)}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);border-block:2px solid var(--vinil);margin:34px 0 32px}
+.metrics div{padding:16px 10px 14px;border-right:1.5px dashed var(--vinil)}
+.metrics div:last-child{border-right:0}
+.metrics b{font-family:var(--f-display);font-weight:400;font-size:clamp(2.4rem,4vw,3.4rem);line-height:1;display:block;color:var(--bordo)}
+.metrics span{font-family:var(--f-mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--sec)}
+
+/* ---------- Crítica ---------- */
+.critica{background:var(--creme);padding:clamp(80px,10vw,140px) 0;--next:var(--papel)}
+.crit-head{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end;margin-bottom:56px}
+.crit-head h2{font-size:clamp(46px,7.5vw,112px);margin-top:18px}
+.crit-head p{font-family:var(--f-serif);font-style:italic;font-size:1.35rem;color:var(--sec);margin:12px 0 0}
+.score{text-align:center;border:2px solid var(--vinil);padding:14px 22px;transform:rotate(3deg);background:var(--rosa);box-shadow:var(--shadow)}
+.score b{font-family:var(--f-display);font-weight:400;font-size:3.6rem;line-height:1;color:var(--bordo);display:block}
+.reviews{display:grid;grid-template-columns:repeat(12,1fr);gap:26px;align-items:start}
+.rev{position:relative;background:var(--creme);border:2px solid var(--vinil);box-shadow:var(--shadow);padding:30px 28px 24px 28px;
+  -webkit-mask:radial-gradient(circle 12px at 0 62%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 12px at 100% 62%,#0000 98%,#000) right/51% 100% no-repeat;
+          mask:radial-gradient(circle 12px at 0 62%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 12px at 100% 62%,#0000 98%,#000) right/51% 100% no-repeat;
+  filter:drop-shadow(5px 5px 0 var(--vinil));box-shadow:none}
+.rev:nth-child(1){grid-column:1/8;background:var(--bordo);color:var(--creme)}
+.rev:nth-child(2){grid-column:8/13;margin-top:70px;transform:rotate(1.2deg)}
+.rev:nth-child(3){grid-column:3/9;margin-top:-10px;transform:rotate(-1deg);background:var(--papel)}
+.rev .stars{font-size:1.05rem}
+.rev:nth-child(1) .stars{color:var(--mostarda)}
+.rev blockquote{margin:14px 0 22px;font-family:var(--f-serif);font-style:italic;font-size:clamp(1.15rem,1.8vw,1.55rem);line-height:1.35}
+.rev:nth-child(1) blockquote{font-size:clamp(1.3rem,2.2vw,1.9rem)}
+.rev cite{font-style:normal;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1.5px dashed currentColor;padding-top:12px}
+.rev cite b{color:var(--bordo)}
+.rev:nth-child(1) cite b{color:var(--mostarda)}
+.rev cite span{font-family:var(--f-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;opacity:.75}
+.crit-note{grid-column:9/13;align-self:center;font-family:var(--f-mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--sec)}
+.crit-note .ticket{margin-top:16px}
+
+/* ---------- Turnê ---------- */
+.turne{background:var(--papel);padding:clamp(80px,10vw,130px) 0 clamp(90px,10vw,140px);--next:var(--bordo)}
+.turne h2{font-size:clamp(46px,7.5vw,112px);margin:18px 0 44px}
+.tour{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:stretch}
+.info{background:var(--creme);border:2px solid var(--vinil);box-shadow:var(--shadow);padding:10px 28px}
+.info-row{display:flex;gap:18px;padding:22px 0;border-bottom:1.5px dashed var(--vinil)}
+.info-row:last-child{border-bottom:0}
+.info-row h3{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.12em;margin-bottom:6px;color:var(--sec)}
+.info-row p{margin:0;font-size:1.12rem;font-weight:500}
+.info-row a.lnk{font-family:var(--f-mono);font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;color:var(--bordo);display:inline-block;margin-top:6px}
+.tbc{font-family:var(--f-mono);font-size:.7rem;text-transform:uppercase;background:var(--rosa);padding:2px 6px;margin-left:6px;vertical-align:middle}
+.ingresso{position:relative;background:var(--bordo);color:var(--creme);border:2px solid var(--vinil);box-shadow:var(--shadow);padding:34px 30px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.ingresso::before{content:"ADMIT ONE";position:absolute;right:-38px;top:50%;transform:rotate(90deg);font-family:var(--f-mono);letter-spacing:.3em;font-size:.7rem;opacity:.5}
+.ingresso h3{font-size:clamp(2.6rem,4.5vw,4.2rem);margin:16px 0}
+.ingresso p{color:rgba(240,228,204,.85);max-width:24em}
+.secondary{display:flex;gap:22px;flex-wrap:wrap;margin-top:24px;font-family:var(--f-mono);font-size:.76rem;text-transform:uppercase;letter-spacing:.08em}
+.secondary a{color:var(--sec)}
+.secondary a:hover{color:var(--bordo)}
+
+/* ---------- Bis ---------- */
+.bis{background:var(--bordo);color:var(--creme);padding:clamp(90px,11vw,160px) 0;position:relative;overflow:hidden;--next:var(--vinil)}
+.bis .wrap{position:relative;z-index:2}
+.bis h2{font-size:clamp(56px,11vw,170px);margin:20px 0 26px;margin-left:-.04em}
+.bis p{font-family:var(--f-serif);font-style:italic;font-size:1.4rem;max-width:26em;color:rgba(240,228,204,.88)}
+.bis .seal{left:auto;right:6%;top:18%;width:180px;height:180px}
+
+/* ---------- Footer ---------- */
+.ftr{background:var(--vinil);color:var(--creme);padding:56px 0 110px;--prev:var(--bordo)}
+.ftr .wrap{display:grid;grid-template-columns:1.2fr 1fr auto;gap:30px;align-items:end}
+.ftr b{font-family:var(--f-display);font-weight:400;font-size:2.2rem;letter-spacing:.02em;display:block;line-height:1}
+.ftr .serif{color:rgba(240,228,204,.8);font-size:1.15rem;margin-top:8px;display:block}
+.ftr .mono{color:rgba(240,228,204,.6);line-height:1.9}
+.ftr .mono a{color:rgba(240,228,204,.8)}
+.stub{border-left:1.5px dashed rgba(240,228,204,.5);padding-left:24px;font-family:var(--f-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;color:var(--mostarda)}
+
+/* ---------- WhatsApp flutuante ---------- */
+.fab{position:fixed;right:18px;bottom:18px;z-index:60;box-shadow:none;filter:drop-shadow(4px 4px 0 var(--vinil))}
+.fab::after{display:none}
+
+/* ---------- Cursor ---------- */
+.cursor{position:fixed;left:0;top:0;z-index:100;pointer-events:none;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;border:1.5px solid var(--vinil);background:rgba(227,167,47,.25);
+  transition:width .2s,height .2s,margin .2s,background-color .2s;display:none;align-items:center;justify-content:center;font-family:var(--f-mono);font-size:.55rem;font-weight:700;letter-spacing:.1em;color:var(--vinil)}
+.cursor.is-hover{width:34px;height:34px;margin:-17px 0 0 -17px;background:rgba(227,167,47,.35)}
+.cursor.is-label{width:52px;height:52px;margin:-26px 0 0 -26px;background:var(--mostarda)}
+@media (hover:hover) and (pointer:fine){.cursor{display:flex}}
+
+/* ---------- Motion base (estado inicial só com JS) ---------- */
+.js .rv{opacity:0;transform:translateY(18px)}
+
+/* ---------- Responsivo ---------- */
+@media (max-width:1100px){
+  .nav{gap:18px} .hdr-phone{display:none}
+}
+@media (max-width:900px){
+  .nav{display:none}
+  .hdr .wrap{height:64px;justify-content:space-between}
+  .brand b{font-size:1.3rem} .logo{width:44px;height:44px}
+  .hero{padding-top:84px}
+  .hero .wrap{grid-template-columns:1fr;min-height:0}
+  .hero-copy{padding:26px 0 30px}
+  .hero h1{width:auto}
+  .hero-art{height:118vw;max-height:620px;margin:0 calc(-1 * var(--gutter))}
+  .hero-art::before{top:0;left:0;right:0;clip-path:polygon(0 12%,100% 0,100% 100%,0 100%)}
+  .hero-art .shot{left:var(--gutter);right:var(--gutter);top:60px;bottom:60px}
+  .seal{width:96px;height:96px;left:10px;top:10px}
+  .fc1{left:10px;bottom:24px} .fc2{right:10px;top:auto;bottom:100px}
+  .d-razor{width:96px;right:12%;top:12px} .d-brush,.d-pick{display:none}
+  .album{grid-template-columns:1fr}
+  .album-copy{padding:64px var(--gutter) 70px}
+  .album .shot{min-height:0;aspect-ratio:4/3;border-left:0;border-top:2px solid var(--vinil)}
+  .rail{flex-direction:column;width:auto;padding:0 var(--gutter)}
+  .svc,.svc--hit{width:auto}
+  .svc:nth-child(even){transform:rotate(.5deg)}
+  .svc--hit{order:-1}
+  .casa .wrap{grid-template-columns:1fr}
+  .collage{min-height:0;aspect-ratio:1/1.05}
+  .crit-head{grid-template-columns:1fr}
+  .score{justify-self:start}
+  .reviews{grid-template-columns:1fr}
+  .rev:nth-child(n){grid-column:auto;margin-top:0}
+  .crit-note{grid-column:auto}
+  .tour{grid-template-columns:1fr}
+  .ftr .wrap{grid-template-columns:1fr}
+  .stub{border-left:0;border-top:1.5px dashed rgba(240,228,204,.5);padding:16px 0 0}
+  .bis .seal{width:110px;height:110px;top:30px;right:12px}
+}
+@media (max-width:520px){
+  .hdr .ticket .lbl-long{display:none}
+  .ticket{width:100%;justify-content:center}
+  .hdr .ticket,.fab{width:auto}
+  .metrics b{font-size:2.1rem}
+  .float-card{max-width:190px;padding:8px}
+  .float-card small{font-size:.74rem}
+}
+@media (min-width:521px){.lbl-short{display:none}}
+@media (max-width:520px){.hdr .lbl-short{display:inline}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition-property:opacity,background-color,color!important}
+  .cursor{display:none!important}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2S21.8 6.6 21.8 12 17.4 21.8 12 21.8zM20.5 3.5C18.2 1.2 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.4z"/></symbol>
+  <symbol id="i-scissors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.1 8.1L20 20M8.1 15.9L20 4"/></symbol>
+  <symbol id="i-razor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 15l9-9 5 2-8 8z"/><path d="M9 16l3 5 3-1-2-6"/></symbol>
+  <symbol id="i-brush" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6c1 3 1.5 5 0 7H9C7.5 8 8 6 9 3z"/><path d="M10 10h4v3h-4zM9.5 13h5l-.8 8h-3.4z"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3s6 6.5 6 11a6 6 0 01-12 0c0-4.5 6-11 6-11z"/></symbol>
+  <symbol id="i-face" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5c1 1.2 2.1 1.8 3.5 1.8s2.5-.6 3.5-1.8M9 10h.01M15 10h.01"/></symbol>
+  <symbol id="i-seal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7c3-2 13-2 16 0M4 12c3-2 13-2 16 0M4 17c3-2 13-2 16 0"/></symbol>
+  <symbol id="i-vinyl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 5.5a6.5 6.5 0 016.5 6.5"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7.1L12 17.3 5.8 21l1.6-7.1L2 9.2l7.1-.6z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.2 7-12a7 7 0 00-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="seal-art" viewBox="0 0 200 200">
+    <defs><path id="sealpath" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs>
+    <circle cx="100" cy="100" r="96" fill="#E3A72F" stroke="#16110F" stroke-width="3"/>
+    <circle cx="100" cy="100" r="58" fill="none" stroke="#16110F" stroke-width="2" stroke-dasharray="3 5"/>
+    <text font-family="Space Mono, monospace" font-size="17" font-weight="700" letter-spacing="6" fill="#16110F"><textPath href="#sealpath">SINCE 2015 · FUNDINHO · UDI ·</textPath></text>
+    <text x="100" y="94" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="34" fill="#8C2B4B">2015</text>
+    <text x="100" y="120" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" font-weight="700" letter-spacing="3" fill="#16110F">DESDE</text>
+  </symbol>
+</svg>
+
+<div class="cursor" aria-hidden="true"></div>
+
+<!-- ================= HEADER ================= -->
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="#topo" aria-label="Fabulosa Barbearia — início">
+      <!-- Logo original do cliente: salve em assets/logo.png (ou .svg). Não redesenhar. -->
+      <span class="logo"><img src="assets/logo.png" alt="Logo Fabulosa Barbearia" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'LOGO'}))"></span>
+      <span><b>FABULOSA</b><small>BARBEARIA · DESDE 2015</small></span>
+    </a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#setlist">Setlist</a><a href="#casa">A Casa</a><a href="#critica">Crítica</a><a href="#turne">Turnê</a>
+    </nav>
+    <a class="hdr-phone" href="tel:+553432575427">(34) 3257-5427</a>
+    <a class="ticket js-wa magnetic" href="#"><svg><use href="#i-wa"/></svg><span class="lbl-long">Agendar no WhatsApp</span><span class="lbl-short">Agendar</span></a>
+  </div>
+</header>
+
+<main id="topo">
+
+<!-- ================= HERO ================= -->
+<section class="hero torn-b" aria-labelledby="h1">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="badge rv">Desde 2015 · Fundinho, Uberlândia</span>
+      <h1 id="h1" class="split">
+        <span class="ln"><span>Entra como</span></span>
+        <span class="ln"><span>cliente.</span></span>
+        <span class="ln"><span class="accent">Sai fabuloso.</span></span>
+      </h1>
+      <p class="hero-sub rv">Barbearia de bairro no Fundinho desde 2015. <strong>Corte e barba</strong> feitos por quem entende, <strong>sem pressa</strong>, do jeito que você pediu. Pode chegar.</p>
+      <div class="ctas rv">
+        <a class="ticket ticket--lg js-wa magnetic" href="#"><svg><use href="#i-wa"/></svg>Agendar no WhatsApp</a>
+        <a class="ticket ticket--lg ticket--outline magnetic" href="#setlist">Ver o setlist</a>
+      </div>
+      <div class="proof rv"><span class="stars" aria-hidden="true">★★★★★</span><span><b>5.0</b> · 166 avaliações no Booksy · desde 2015</span></div>
+    </div>
+
+    <div class="hero-art" aria-hidden="false">
+      <figure class="shot clip-img" data-cursor="VER" style="margin:0">
+        <img src="assets/hero.jpg" alt="Barbeiro finalizando a linha da barba de um cliente com navalha" onerror="this.remove()">
+        <div class="ph"><span>Imagem 1 · barbeiro finalizando a barba (duotone bordô/preto)</span></div>
+      </figure>
+      <div class="seal parallax" data-speed="-0.15"><svg><use href="#seal-art"/></svg></div>
+      <div class="deco d-razor parallax" data-speed="0.25" aria-hidden="true">
+        <svg viewBox="0 0 200 60"><rect x="4" y="22" width="92" height="16" rx="3" fill="#16110F"/><circle cx="96" cy="30" r="6" fill="#E3A72F" stroke="#16110F" stroke-width="2"/><path d="M98 22h92l6 8-6 8H98z" fill="#D9D2C6" stroke="#16110F" stroke-width="2.5"/><path d="M110 30h74" stroke="#fff" stroke-width="2" opacity=".7"/></svg>
+      </div>
+      <div class="deco d-brush parallax" data-speed="0.18" aria-hidden="true">
+        <svg viewBox="0 0 60 120"><path d="M12 8c10-8 26-8 36 0 6 14 4 28-4 40H16C8 36 6 22 12 8z" fill="#F0E4CC" stroke="#16110F" stroke-width="2.5"/><rect x="16" y="48" width="28" height="12" fill="#E3A72F" stroke="#16110F" stroke-width="2.5"/><path d="M18 60h24l-4 56H22z" fill="#8C2B4B" stroke="#16110F" stroke-width="2.5"/></svg>
+      </div>
+      <div class="deco d-pick parallax" data-speed="0.3" aria-hidden="true">
+        <svg viewBox="0 0 60 70"><path d="M30 68C14 52 2 34 4 18 6 6 18 2 30 2s24 4 26 16c2 16-10 34-26 50z" fill="#E3A72F" stroke="#16110F" stroke-width="2.5"/></svg>
+      </div>
+      <div class="float-card fc1 rv"><span class="chip"><svg><use href="#i-vinyl"/></svg></span><span><b>Desde 2015</b><small>10+ anos no Fundinho</small></span></div>
+      <div class="float-card fc2 rv"><span class="chip"><svg><use href="#i-star"/></svg></span><span><b>Nota 5.0</b><small>166 avaliações no Booksy</small></span></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="track">
+  <span>SETLIST <i>✦</i> CORTE <i>✦</i> BARBA <i>✦</i> DESDE 2015 <i>✦</i> FUNDINHO <i>✦</i></span><span>SETLIST <i>✦</i> CORTE <i>✦</i> BARBA <i>✦</i> DESDE 2015 <i>✦</i> FUNDINHO <i>✦</i></span>
+  <span>SETLIST <i>✦</i> CORTE <i>✦</i> BARBA <i>✦</i> DESDE 2015 <i>✦</i> FUNDINHO <i>✦</i></span><span>SETLIST <i>✦</i> CORTE <i>✦</i> BARBA <i>✦</i> DESDE 2015 <i>✦</i> FUNDINHO <i>✦</i></span>
+</div></div>
+
+<!-- ================= ÁLBUM COMPLETO ================= -->
+<section class="album on-dark torn-b" id="album" aria-labelledby="h-album" data-bg="#8C2B4B">
+  <div class="album-copy">
+    <span class="badge badge--light rv">Combo · 1h · R$ 130</span>
+    <h2 id="h-album" class="split"><span class="ln"><span>Lado A: o corte.</span></span><span class="ln"><span><em>Lado B: a barba.</em></span></span></h2>
+    <p class="rv">O álbum completo, do primeiro corte de tesoura à última passada de navalha. Você não precisa saber o nome do corte: conta o que quer, a gente traduz. E ninguém olha o relógio.</p>
+    <ul class="checks rv">
+      <li>1 hora reservada só para você</li>
+      <li>Corte do jeito que você pediu, sem susto</li>
+      <li>Barba completa com acabamento limpo</li>
+    </ul>
+    <div class="ctas rv">
+      <a class="ticket js-wa magnetic" data-msg="Oi! Quero reservar o álbum completo (corte + barba) na Fabulosa." href="#"><svg><use href="#i-wa"/></svg>Reservar meu álbum completo</a>
+      <a class="ticket ticket--outline magnetic" href="#setlist">Ver faixas avulsas</a>
+    </div>
+    <p class="price-cut rv">Separado: <s>R$ 70 + R$ 70 = R$ 140</s> · No combo: R$ 130</p>
+  </div>
+  <figure class="shot shot--color clip-img" data-cursor="VER" style="margin:0">
+    <img src="assets/interior.jpg" alt="Interior da Fabulosa: cadeiras antigas de barbeiro diante de espelhos, parede bordô" onerror="this.remove()">
+    <div class="ph"><span>Imagem 2 · interior da barbearia</span></div>
+  </figure>
+</section>
+
+<!-- ================= SETLIST ================= -->
+<section class="setlist torn-b" id="setlist" aria-labelledby="h-set" data-bg="#F0E4CC">
+  <div class="wrap">
+    <div class="set-head">
+      <div>
+        <span class="badge rv">Serviços e preços · tabela Booksy</span>
+        <h2 id="h-set" class="split"><span class="ln"><span>O setlist</span></span><span class="ln"><span>da casa.</span></span></h2>
+        <p class="rv">Do clássico ao bis. Preços de agora.</p>
+      </div>
+      <span class="set-hint rv">Role → a banda toca na ordem</span>
+    </div>
+  </div>
+
+  <div class="pin-area">
+    <div class="rail">
+      <article class="svc"><div class="svc-top"><span class="chip"><svg><use href="#i-scissors"/></svg></span><span class="svc-no">FAIXA 01</span></div>
+        <h3>Corte</h3><p>O do seu jeito. Você explica, a gente escuta antes de ligar a máquina.</p>
+        <div class="svc-foot"><b>R$ 70</b><span>40 min</span></div></article>
+      <article class="svc"><div class="svc-top"><span class="chip"><svg><use href="#i-razor"/></svg></span><span class="svc-no">FAIXA 02</span></div>
+        <h3>Barba completa</h3><p>Toalha quente, navalha e linha desenhada. Sai alinhado, sem ardência.</p>
+        <div class="svc-foot"><b>R$ 70</b><span>30 min</span></div></article>
+      <article class="svc"><div class="svc-top"><span class="chip"><svg><use href="#i-scissors"/></svg></span><span class="svc-no">FAIXA 03</span></div>
+        <h3>Raspado lateral</h3><p>Lateral limpa com acabamento. Pra manter o corte em dia entre um show e outro.</p>
+        <div class="svc-foot"><b>R$ 50</b><span>30 min</span></div></article>
+      <article class="svc"><div class="svc-top"><span class="chip"><svg><use href="#i-face"/></svg></span><span class="svc-no">FAIXA 04</span></div>
+        <h3>Limpeza de pele</h3><p>Tira o cansaço da cara. Deita, respira, sai outra pessoa (a mesma, mas melhor).</p>
+        <div class="svc-foot"><b>R$ 40</b><span>40 min</span></div></article>
+      <article class="svc"><div class="svc-top"><span class="chip"><svg><use href="#i-drop"/></svg></span><span class="svc-no">FAIXA 05</span></div>
+        <h3>Hidratação</h3><p>Vinte minutos pro cabelo respirar. Faixa curta, efeito longo.</p>
+        <div class="svc-foot"><b>R$ 35</b><span>20 min</span></div></article>
+      <article class="svc"><div class="svc-top"><span class="chip"><svg><use href="#i-seal"/></svg></span><span class="svc-no">FAIXA 06</span></div>
+        <h3>Selagem</h3><p>Fio alinhado e sem frizz. O valor final depende do comprimento, a gente te fala antes.</p>
+        <div class="svc-foot"><b><small style="font-size:.6em">a partir de</small> R$ 90</b><span>1 h</span></div></article>
+      <article class="svc svc--hit" data-cursor="PLAY"><span class="tag">CARRO-CHEFE</span><div class="svc-top"><span class="chip"><svg><use href="#i-vinyl"/></svg></span><span class="svc-no">LADO A + LADO B</span></div>
+        <h3>Combo corte + barba</h3><p>O álbum completo: uma hora sua, corte e barba sem correria. Economiza R$ 10.</p>
+        <a href="#album">Saiba mais →</a>
+        <div class="svc-foot"><b>R$ 130</b><span>1 h</span></div></article>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="extras rv">
+      <div><em>Extras</em><span>Sobrancelha <b>R$ 20</b></span><span>Pezinho <b>R$ 25</b></span><span>Higienização auricular e nasal <b>R$ 30</b></span><span>Coloração de barba <b>R$ 30</b></span></div>
+      <div><em>Outros álbuns</em><span>Corte + selagem <b>R$ 160</b> (1 h 30)</span><span>Corte, barba e selagem <b>R$ 220</b> (2 h)</span></div>
+    </div>
+    <div class="set-cta rv">
+      <a class="ticket js-wa magnetic" href="#"><svg><use href="#i-wa"/></svg>Agendar no WhatsApp</a>
+      <a class="ticket ticket--outline magnetic" href="#critica">Ler a crítica</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= A CASA ================= -->
+<section class="casa torn-b halftone" id="casa" aria-labelledby="h-casa" data-bg="#E2D0AE">
+  <div class="wrap">
+    <div class="collage">
+      <svg class="vinyl parallax" data-speed="-0.2" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49" fill="#16110F"/><g fill="none" stroke="#3a302c" stroke-width=".6"><circle cx="50" cy="50" r="42"/><circle cx="50" cy="50" r="36"/><circle cx="50" cy="50" r="30"/><circle cx="50" cy="50" r="24"/></g><circle cx="50" cy="50" r="15" fill="#8C2B4B"/><circle cx="50" cy="50" r="2" fill="#F0E4CC"/></svg>
+      <figure class="shot c1 clip-img" data-cursor="VER" style="margin:0">
+        <span class="tape" aria-hidden="true"></span>
+        <img src="assets/equipe.jpg" alt="Equipe da Fabulosa Barbearia" onerror="this.remove()">
+        <div class="ph"><span>Imagem 3 · foto real da equipe</span></div>
+      </figure>
+      <figure class="shot shot--color c2 clip-img parallax" data-speed="0.12" data-cursor="VER" style="margin:0">
+        <img src="assets/bancada.jpg" alt="Bancada de trabalho com navalhas, pincel e toca-discos" onerror="this.remove()">
+        <div class="ph"><span>Imagem 5 · bancada</span></div>
+      </figure>
+    </div>
+    <div class="body">
+      <span class="badge rv">Desde 2015</span>
+      <h2 class="split"><span class="ln"><span>Luiz Ricardo</span></span><span class="ln"><span>e equipe</span></span></h2>
+      <p class="role rv">Barbeiros do Fundinho</p>
+      <p class="rv">Em 2015 a Fabulosa abriu no Fundinho com uma ideia simples: corte bem feito, barba bem feita e um lugar onde dá vontade de ficar. Mais de dez anos depois, virou ponto de encontro: gente que vem pelo corte e volta pelo papo.</p>
+      <p class="manifesto rv">“Aqui ninguém sai com corte de catálogo. Você conta o que quer, a gente traduz em tesoura e navalha, e ninguém te apressa.”</p>
+      <div class="metrics rv">
+        <div><b>2015</b><span>Desde</span></div>
+        <div><b>5.0</b><span>Nota no Booksy</span></div>
+        <div><b>166</b><span>Avaliações</span></div>
+      </div>
+      <div class="ctas rv" style="margin:0">
+        <a class="ticket js-wa magnetic" href="#"><svg><use href="#i-wa"/></svg>Marcar com a banda</a>
+        <a class="ticket ticket--outline magnetic" href="#turne">Como chegar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CRÍTICA ================= -->
+<section class="critica torn-b" id="critica" aria-labelledby="h-crit" data-bg="#F0E4CC">
+  <div class="wrap">
+    <div class="crit-head">
+      <div>
+        <span class="badge rv">Crítica da noite</span>
+        <h2 id="h-crit" class="split"><span class="ln"><span>Crítica</span></span><span class="ln"><span>da noite</span></span></h2>
+        <p class="rv">5.0 no Booksy. A plateia aprova.</p>
+      </div>
+      <div class="score rv"><b>5.0</b><span class="stars">★★★★★</span><div class="mono" style="margin-top:6px">166 avaliações</div></div>
+    </div>
+    <div class="reviews">
+      <figure class="rev rv" style="margin:0">
+        <div class="stars" aria-label="5 estrelas">★★★★★</div>
+        <blockquote>“Melhor barbearia de Uberlândia. É possível encontrar vários amigos, tomar uma cerveja, bater um papo com o Magrelo e de quebra ter um excelente corte de cabelo.”</blockquote>
+        <cite><b>Mauro Ribeiro</b><span>Foursquare</span></cite>
+      </figure>
+      <figure class="rev rv" style="margin:0">
+        <div class="stars" aria-label="5 estrelas">★★★★★</div>
+        <blockquote>“Fabulosa, a melhor barbearia de Udão. Valeu, Rodrigo, pelo corte e limpeza nasal. Obrigado, Magrelo, vocês são feras.”</blockquote>
+        <cite><b>Cliente</b><span>Booksy</span></cite>
+      </figure>
+      <figure class="rev rv" style="margin:0">
+        <div class="stars" aria-label="5 estrelas">★★★★★</div>
+        <blockquote>“Melhor barbearia da cidade 🔥”</blockquote>
+        <cite><b>Cliente</b><span>Booksy</span></cite>
+      </figure>
+      <div class="crit-note rv">Sem susto, sem fila de número, sem corte de catálogo. Quer ser o próximo a escrever a crítica?
+        <br><a class="ticket js-wa magnetic" href="#"><svg><use href="#i-wa"/></svg>Quero meu ingresso</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TURNÊ ================= -->
+<section class="turne torn-b" id="turne" aria-labelledby="h-tur" data-bg="#E2D0AE">
+  <div class="wrap">
+    <span class="badge rv">Turnê permanente · 1 data só</span>
+    <h2 id="h-tur" class="split"><span class="ln"><span>Turnê:</span></span><span class="ln"><span class="accent" style="color:var(--bordo)">Fundinho, todo dia.</span></span></h2>
+    <div class="tour">
+      <div class="info rv">
+        <div class="info-row"><span class="chip"><svg><use href="#i-pin"/></svg></span><div><h3>Local do show</h3><p>Praça Cícero Macedo, 46 – Fundinho – Uberlândia/MG</p><a class="lnk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Pra%C3%A7a%20C%C3%ADcero%20Macedo%2C%2046%2C%20Fundinho%2C%20Uberl%C3%A2ndia%20MG">Como chegar →</a></div></div>
+        <div class="info-row"><span class="chip"><svg><use href="#i-phone"/></svg></span><div><h3>Telefone / WhatsApp</h3><p><a href="tel:+553432575427" style="text-decoration:none">(34) 3257-5427</a></p></div></div>
+        <div class="info-row"><span class="chip"><svg><use href="#i-clock"/></svg></span><div><h3>Horário</h3><p>Chama no WhatsApp pra ver os horários da semana <span class="tbc">a confirmar</span></p></div></div>
+      </div>
+      <div class="ingresso on-dark rv">
+        <div>
+          <span class="badge badge--light">Ingresso · entrada individual</span>
+          <h3>Garantir meu ingresso</h3>
+          <p>Manda um oi, escolhe o horário e pronto. Resposta de gente, não de robô.</p>
+        </div>
+        <div><a class="ticket ticket--lg js-wa magnetic" href="#"><svg><use href="#i-wa"/></svg>Garantir meu ingresso</a></div>
+      </div>
+    </div>
+    <div class="secondary rv">
+      <a href="#" id="booksy" target="_blank" rel="noopener">Agendar pelo Booksy</a>
+      <a href="https://www.instagram.com/fabulosabarbearia/" target="_blank" rel="noopener">Instagram @fabulosabarbearia</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BIS ================= -->
+<section class="bis on-dark torn-b" aria-labelledby="h-bis" data-bg="#8C2B4B">
+  <div class="seal parallax" data-speed="-0.1"><svg><use href="#seal-art"/></svg></div>
+  <div class="wrap">
+    <span class="badge badge--light rv">Bis</span>
+    <h2 id="h-bis" class="split"><span class="ln"><span>Mais um?</span></span><span class="ln"><span class="accent">Senta aí.</span></span></h2>
+    <p class="rv">A cadeira tá esperando e o barbeiro também. Sem pressa, do seu jeito.</p>
+    <div class="ctas rv">
+      <a class="ticket ticket--lg js-wa magnetic" href="#"><svg><use href="#i-wa"/></svg>Agendar no WhatsApp</a>
+      <a class="ticket ticket--lg ticket--outline magnetic" href="#setlist">Rever o setlist</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="ftr perf-t">
+  <div class="wrap">
+    <div><b>FABULOSA BARBEARIA</b><span class="serif">A barbearia mais charmosa da cidade.</span></div>
+    <div class="mono">Praça Cícero Macedo, 46 · Fundinho · Uberlândia/MG<br><a href="tel:+553432575427">(34) 3257-5427</a> · <a href="https://www.instagram.com/fabulosabarbearia/" target="_blank" rel="noopener">@fabulosabarbearia</a><br>© 2015–2026 Fabulosa Barbearia</div>
+    <div class="stub">Nº 2015<br>Admit one</div>
+  </div>
+</footer>
+
+<a class="ticket fab js-wa magnetic" href="#" aria-label="Agendar pelo WhatsApp"><svg><use href="#i-wa"/></svg>Ingresso</a>
+
+<script>
+/* ---------- Links de conversão ---------- */
+(function(){
+  var WA='553432575427', DEF='Oi! Quero agendar um horário na Fabulosa.';
+  var BOOKSY=''; /* link do Booksy (a confirmar) */
+  document.querySelectorAll('.js-wa').forEach(function(a){
+    a.href='https://wa.me/'+WA+'?text='+encodeURIComponent(a.dataset.msg||DEF);
+    a.target='_blank'; a.rel='noopener';
+  });
+  var b=document.getElementById('booksy');
+  if(BOOKSY){b.href=BOOKSY}else{b.href='https://booksy.com/pt-br/s?query=Fabulosa%20Barbearia%20Uberl%C3%A2ndia'}
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+  if(!window.gsap){return;}
+  gsap.registerPlugin(ScrollTrigger);
+  document.documentElement.classList.add('js');
+
+  if(reduce){
+    /* Apenas opacidade sutil */
+    gsap.utils.toArray('.rv,.ln > span').forEach(function(el){
+      gsap.fromTo(el,{opacity:0},{opacity:1,duration:.4,scrollTrigger:{trigger:el,start:'top 92%'}});
+    });
+    return;
+  }
+
+  /* Títulos em linhas, com clip */
+  gsap.set('.ln > span',{yPercent:105});
+  gsap.utils.toArray('.split').forEach(function(h){
+    gsap.to(h.querySelectorAll('.ln > span'),{yPercent:0,duration:.7,ease:'power3.out',stagger:.08,
+      scrollTrigger:{trigger:h,start:'top 88%'}});
+  });
+
+  /* Reveals */
+  gsap.utils.toArray('.rv').forEach(function(el){
+    gsap.to(el,{opacity:1,y:0,duration:.6,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 90%'}});
+  });
+
+  /* Imagens: reveal por clip-path */
+  gsap.utils.toArray('.clip-img').forEach(function(el){
+    gsap.fromTo(el,{clipPath:'inset(100% 0 0 0)'},{clipPath:'inset(0% 0 0 0)',duration:1.1,ease:'power3.inOut',
+      scrollTrigger:{trigger:el,start:'top 85%'}});
+  });
+
+  /* Parallax leve */
+  gsap.utils.toArray('.parallax').forEach(function(el){
+    var s=parseFloat(el.dataset.speed||.2);
+    gsap.to(el,{yPercent:s*-100,ease:'none',scrollTrigger:{trigger:el.closest('section')||el,start:'top bottom',end:'bottom top',scrub:true}});
+  });
+
+  /* Transição de cor do body por seção (sem troca abrupta) */
+  gsap.utils.toArray('[data-bg]').forEach(function(sec){
+    ScrollTrigger.create({trigger:sec,start:'top 55%',end:'bottom 55%',
+      onToggle:function(self){ if(self.isActive) gsap.to(document.body,{backgroundColor:sec.dataset.bg,duration:.6,overwrite:'auto'}); }});
+  });
+
+  /* Setlist pinned: scroll horizontal no desktop */
+  ScrollTrigger.matchMedia({
+    '(min-width: 901px)':function(){
+      var rail=document.querySelector('.rail'), area=document.querySelector('.pin-area');
+      var dist=function(){return Math.max(0,rail.scrollWidth-window.innerWidth)};
+      gsap.to(rail,{x:function(){return -dist()},ease:'none',
+        scrollTrigger:{trigger:area,start:'center center',end:function(){return '+='+dist()},pin:'.setlist',pinSpacing:true,scrub:.6,invalidateOnRefresh:true,anticipatePin:1}});
+    }
+  });
+
+  /* Botões magnéticos (2–5px) */
+  if(fine){
+    document.querySelectorAll('.magnetic').forEach(function(b){
+      var xTo=gsap.quickTo(b,'x',{duration:.3,ease:'power3'}), yTo=gsap.quickTo(b,'y',{duration:.3,ease:'power3'});
+      b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect();
+        xTo(((e.clientX-r.left)/r.width-.5)*8); yTo(((e.clientY-r.top)/r.height-.5)*6);});
+      b.addEventListener('mouseleave',function(){xTo(0);yTo(0)});
+    });
+
+    /* Cursor customizado discreto */
+    var c=document.querySelector('.cursor');
+    var cx=gsap.quickTo(c,'x',{duration:.18,ease:'power3'}), cy=gsap.quickTo(c,'y',{duration:.18,ease:'power3'});
+    window.addEventListener('mousemove',function(e){cx(e.clientX);cy(e.clientY)});
+    document.addEventListener('mouseover',function(e){
+      var lab=e.target.closest('[data-cursor]'), act=e.target.closest('a,button');
+      c.classList.toggle('is-label',!!lab&&!act); c.textContent=(lab&&!act)?lab.dataset.cursor:'';
+      c.classList.toggle('is-hover',!!act);
+    });
+  }
+})();
+</script>
+</body>
+</html>
