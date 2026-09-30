@@ -11,10 +11,10 @@ Enquanto o arquivo não existir, aparece um placeholder bordô com o rótulo da 
 | `assets/hero.jpg` | Imagem 1 · barbeiro finalizando a barba (4:5, recebe duotone via CSS) |
 | `assets/interior.jpg` | Imagem 2 · interior (4:3, em cor) |
 | `assets/equipe.jpg` | Imagem 3 · equipe (4:5, duotone) |
-| `assets/bancada.jpg` | Imagem 5 · bancada (4:3, em cor) |
+| `assets/casa.mp4` + `casa-poster.jpg` | Vídeo vertical do Magrelo na casa (sem áudio, loop) |
 | (mini-perfis) | Recortes via CSS de `assets/equipe.png`: Rodrigo à esquerda, Luiz à direita |
 
 ## A confirmar com o cliente
 - Prints do Google/Booksy com nome para trocar "Cliente" nos depoimentos 2 e 3
 - Bordô exato a partir do logo original (`--bordo` no `:root`)
-- Fotos reais (logo, equipe, espaço)
+- Logo original (SVG ou PNG grande)
