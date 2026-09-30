@@ -12,7 +12,7 @@ Enquanto o arquivo não existir, aparece um placeholder bordô com o rótulo da 
 | `assets/interior.jpg` | Imagem 2 · interior (4:3, em cor) |
 | `assets/equipe.jpg` | Imagem 3 · equipe (4:5, duotone) |
 | `assets/bancada.jpg` | Imagem 5 · bancada (4:3, em cor) |
-| `assets/luiz.jpg`, `assets/rodrigo.jpg` | Mini-perfis da equipe (quadradas) |
+| (mini-perfis) | Recortes via CSS de `assets/equipe.png`: Rodrigo à esquerda, Luiz à direita |
 
 ## A confirmar com o cliente
 - Prints do Google/Booksy com nome para trocar "Cliente" nos depoimentos 2 e 3

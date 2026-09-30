@@ -213,6 +213,9 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;op
 .crew article:nth-child(1){transform:rotate(-1deg)} .crew article:nth-child(2){transform:rotate(.8deg)}
 .crew .shot{width:64px;height:64px;flex:none;border:1.5px solid var(--vinil)}
 .crew .shot .ph{padding:6px}
+.crew .face{object-fit:cover;transform:scale(2)}
+.crew .face--luiz{object-position:100% 0;transform-origin:75% 66%}
+.crew .face--rodrigo{object-position:0 0;transform-origin:30% 55%}
 .crew h3{font-size:1.35rem;line-height:1}
 .crew small{display:block;font-family:var(--f-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--sec);margin-top:4px}
 .crew small b{color:var(--bordo)}
@@ -526,7 +529,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;op
       <svg class="vinyl parallax" data-speed="-0.2" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49" fill="#16110F"/><g fill="none" stroke="#3a302c" stroke-width=".6"><circle cx="50" cy="50" r="42"/><circle cx="50" cy="50" r="36"/><circle cx="50" cy="50" r="30"/><circle cx="50" cy="50" r="24"/></g><circle cx="50" cy="50" r="15" fill="#8C2B4B"/><circle cx="50" cy="50" r="2" fill="#F0E4CC"/></svg>
       <figure class="shot shot--color c1 clip-img" data-cursor="VER" style="margin:0">
         <span class="tape" aria-hidden="true"></span>
-        <img src="assets/equipe.png" alt="Luiz Ricardo “Magrelo” e Rodrigo Sobreira, barbeiros da Fabulosa" onerror="this.remove()">
+        <img src="assets/equipe.png" alt="Rodrigo Sobreira (à esquerda) e Luiz Ricardo “Magrelo” (à direita)" onerror="this.remove()">
         <div class="ph"><span>Imagem 3 · foto real da equipe</span></div>
       </figure>
       <figure class="shot shot--color c2 clip-img parallax" data-speed="0.12" data-cursor="VER" style="margin:0">
@@ -541,9 +544,9 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;op
       <p class="rv">Em 2015 a Fabulosa abriu no Fundinho com uma ideia simples: corte bem feito, barba bem feita e um lugar onde dá vontade de ficar. Mais de dez anos depois, virou ponto de encontro: gente que vem pelo corte e volta pelo papo.</p>
       <p class="manifesto rv">“Aqui ninguém sai com corte de catálogo. Você conta o que quer, a gente traduz em tesoura e navalha, e ninguém te apressa.”</p>
       <div class="crew rv">
-        <article><figure class="shot" style="margin:0"><img src="assets/luiz.jpg" alt="Luiz Ricardo, o Magrelo" onerror="this.remove()"><div class="ph"></div></figure>
+        <article><figure class="shot shot--color" style="margin:0"><img src="assets/equipe.png" alt="Luiz Ricardo “Magrelo”" class="face face--luiz"><div class="ph"></div></figure>
           <div><h3>Luiz Ricardo “Magrelo”</h3><small>Proprietário · <b>★ 5.0</b></small></div></article>
-        <article><figure class="shot" style="margin:0"><img src="assets/rodrigo.jpg" alt="Rodrigo Sobreira" onerror="this.remove()"><div class="ph"></div></figure>
+        <article><figure class="shot shot--color" style="margin:0"><img src="assets/equipe.png" alt="Rodrigo Sobreira" class="face face--rodrigo"><div class="ph"></div></figure>
           <div><h3>Rodrigo Sobreira</h3><small>Barbeiro · <b>★ 5.0</b></small></div></article>
       </div>
       <div class="metrics rv">
