@@ -68,6 +68,11 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;op
 .on-dark .ticket:not(.ticket--outline):hover{--bg:var(--creme);--fg:var(--bordo)}
 .ticket--lg{font-size:.95rem;padding:1.25em 2.1em}
 
+.preview-bar{position:fixed;top:0;left:0;right:0;z-index:70;height:30px;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--vinil);color:var(--mostarda);font-family:var(--f-mono);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;overflow:hidden}
+.preview-bar i{font-style:normal;color:var(--creme);opacity:.6}
+.preview-mark{position:fixed;inset:0;z-index:89;pointer-events:none;opacity:.05;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='220'%3E%3Ctext x='20' y='130' transform='rotate(-20 180 110)' font-family='monospace' font-size='34' font-weight='700' fill='%2316110F'%3EPR%C3%89VIA%3C/text%3E%3C/svg%3E")}
+.hdr{top:30px!important}
 /* ---------- Header ---------- */
 .hdr{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(240,228,204,.92);backdrop-filter:blur(6px);border-bottom:2px solid var(--vinil)}
 .hdr .wrap{display:flex;align-items:center;gap:24px;height:74px}
@@ -109,7 +114,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;op
 .clip-reveal{clip-path:inset(0 0 0 0)}
 
 /* ---------- HERO ---------- */
-.hero{position:relative;padding:118px 0 0;background:var(--creme);--next:var(--bordo);overflow:hidden}
+.hero{position:relative;padding:148px 0 0;background:var(--creme);--next:var(--bordo);overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:0;align-items:stretch;min-height:calc(100vh - 74px);min-height:calc(100svh - 74px)}
 .hero-copy{position:relative;z-index:4;padding:40px 0 90px;display:flex;flex-direction:column;justify-content:center}
 .hero h1{font-size:clamp(44px,8.6vw,120px);margin:22px 0 26px;width:118%;}
@@ -308,7 +313,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;op
   .nav{display:none}
   .hdr .wrap{height:64px;justify-content:space-between}
   .brand b{font-size:1.3rem} .logo{width:44px;height:44px}
-  .hero{padding-top:84px}
+  .hero{padding-top:114px}
   .hero .wrap{grid-template-columns:1fr;min-height:0}
   .hero-copy{padding:26px 0 30px}
   .hero h1{width:auto}
@@ -383,6 +388,8 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;op
 </svg>
 
 <div class="cursor" aria-hidden="true"></div>
+<div class="preview-bar" role="note">Prévia <i>·</i> Não publicado <i>·</i> Prévia</div>
+<div class="preview-mark" aria-hidden="true"></div>
 
 <!-- ================= HEADER ================= -->
 <header class="hdr">
