@@ -205,6 +205,15 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;op
 .casa .role{font-family:var(--f-serif);font-style:italic;font-size:1.5rem;color:var(--bordo);margin-bottom:26px}
 .casa .body p{color:#3b2f2a;max-width:34em}
 .manifesto{font-family:var(--f-serif);font-style:italic;font-size:clamp(1.3rem,2vw,1.6rem);line-height:1.3;border-left:4px solid var(--bordo);padding-left:18px;margin:26px 0;color:var(--vinil)}
+.crew{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 30px}
+.crew article{display:flex;gap:12px;align-items:center;background:var(--creme);border:2px solid var(--vinil);box-shadow:4px 4px 0 var(--vinil);padding:10px}
+.crew article:nth-child(1){transform:rotate(-1deg)} .crew article:nth-child(2){transform:rotate(.8deg)}
+.crew .shot{width:64px;height:64px;flex:none;border:1.5px solid var(--vinil)}
+.crew .shot .ph{padding:6px}
+.crew h3{font-size:1.35rem;line-height:1}
+.crew small{display:block;font-family:var(--f-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--sec);margin-top:4px}
+.crew small b{color:var(--bordo)}
+.beer{display:inline-block;margin-top:8px;font-family:var(--f-mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;background:var(--mostarda);padding:3px 8px;border:1.5px solid var(--vinil);transform:rotate(-1.5deg)}
 .metrics{display:grid;grid-template-columns:repeat(3,1fr);border-block:2px solid var(--vinil);margin:34px 0 32px}
 .metrics div{padding:16px 10px 14px;border-right:1.5px dashed var(--vinil)}
 .metrics div:last-child{border-right:0}
@@ -324,6 +333,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;op
   .bis .seal{width:110px;height:110px;top:30px;right:12px}
 }
 @media (max-width:520px){
+  .crew{grid-template-columns:1fr}
   .hdr .ticket .lbl-long{display:none}
   .ticket{width:100%;justify-content:center}
   .hdr .ticket,.fab{width:auto}
@@ -527,6 +537,12 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;op
       <p class="role rv">Barbeiros do Fundinho</p>
       <p class="rv">Em 2015 a Fabulosa abriu no Fundinho com uma ideia simples: corte bem feito, barba bem feita e um lugar onde dá vontade de ficar. Mais de dez anos depois, virou ponto de encontro: gente que vem pelo corte e volta pelo papo.</p>
       <p class="manifesto rv">“Aqui ninguém sai com corte de catálogo. Você conta o que quer, a gente traduz em tesoura e navalha, e ninguém te apressa.”</p>
+      <div class="crew rv">
+        <article><figure class="shot" style="margin:0"><img src="assets/luiz.jpg" alt="Luiz Ricardo, o Magrelo" onerror="this.remove()"><div class="ph"></div></figure>
+          <div><h3>Luiz Ricardo “Magrelo”</h3><small>Proprietário · <b>★ 5.0</b></small></div></article>
+        <article><figure class="shot" style="margin:0"><img src="assets/rodrigo.jpg" alt="Rodrigo Sobreira" onerror="this.remove()"><div class="ph"></div></figure>
+          <div><h3>Rodrigo Sobreira</h3><small>Barbeiro · <b>★ 5.0</b></small></div></article>
+      </div>
       <div class="metrics rv">
         <div><b>2015</b><span>Desde</span></div>
         <div><b>5.0</b><span>Nota no Booksy</span></div>
@@ -580,7 +596,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;op
     <h2 id="h-tur" class="split"><span class="ln"><span>Turnê:</span></span><span class="ln"><span class="accent" style="color:var(--bordo)">Fundinho, todo dia.</span></span></h2>
     <div class="tour">
       <div class="info rv">
-        <div class="info-row"><span class="chip"><svg><use href="#i-pin"/></svg></span><div><h3>Local do show</h3><p>Praça Cícero Macedo, 46 – Fundinho – Uberlândia/MG</p><a class="lnk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Pra%C3%A7a%20C%C3%ADcero%20Macedo%2C%2046%2C%20Fundinho%2C%20Uberl%C3%A2ndia%20MG">Como chegar →</a></div></div>
+        <div class="info-row"><span class="chip"><svg><use href="#i-pin"/></svg></span><div><h3>Local do show</h3><p>Praça Cícero Macedo, 46 – Fundinho – Uberlândia/MG</p><span class="beer">Tem cerveja. Você paga.</span><br><a class="lnk" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Pra%C3%A7a%20C%C3%ADcero%20Macedo%2C%2046%2C%20Fundinho%2C%20Uberl%C3%A2ndia%20MG">Como chegar →</a></div></div>
         <div class="info-row"><span class="chip"><svg><use href="#i-phone"/></svg></span><div><h3>Telefone / WhatsApp</h3><p><a href="tel:+553432575427" style="text-decoration:none">(34) 3257-5427</a></p></div></div>
         <div class="info-row"><span class="chip"><svg><use href="#i-clock"/></svg></span><div><h3>Horário</h3><p>Chama no WhatsApp pra ver os horários da semana <span class="tbc">a confirmar</span></p></div></div>
       </div>
@@ -629,13 +645,13 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;op
 /* ---------- Links de conversão ---------- */
 (function(){
   var WA='553432575427', DEF='Oi! Quero agendar um horário na Fabulosa.';
-  var BOOKSY=''; /* link do Booksy (a confirmar) */
+  var BOOKSY='https://booksy.com/pt-br/instant-experiences/widget/95013';
   document.querySelectorAll('.js-wa').forEach(function(a){
     a.href='https://wa.me/'+WA+'?text='+encodeURIComponent(a.dataset.msg||DEF);
     a.target='_blank'; a.rel='noopener';
   });
   var b=document.getElementById('booksy');
-  if(BOOKSY){b.href=BOOKSY}else{b.href='https://booksy.com/pt-br/s?query=Fabulosa%20Barbearia%20Uberl%C3%A2ndia'}
+  b.href=BOOKSY;
 })();
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

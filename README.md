@@ -12,11 +12,10 @@ Enquanto o arquivo não existir, aparece um placeholder bordô com o rótulo da 
 | `assets/interior.jpg` | Imagem 2 · interior (4:3, em cor) |
 | `assets/equipe.jpg` | Imagem 3 · equipe (4:5, duotone) |
 | `assets/bancada.jpg` | Imagem 5 · bancada (4:3, em cor) |
+| `assets/luiz.jpg`, `assets/rodrigo.jpg` | Mini-perfis da equipe (quadradas) |
 
 ## A confirmar com o cliente
 - Horário de funcionamento (seção Turnê marca "a confirmar")
-- Link do Booksy (`BOOKSY` no primeiro `<script>`; hoje cai numa busca do Booksy)
-- (34) 3257-5427 ativo no WhatsApp Business
-- Nomes/funções da equipe e quem é o "Magrelo"; autorização dos depoimentos com nome
-- Se a casa serve cerveja (citada só dentro do depoimento real)
+- Prints do Google/Booksy com nome para trocar "Cliente" nos depoimentos 2 e 3
 - Bordô exato a partir do logo original (`--bordo` no `:root`)
+- Fotos reais (logo, equipe, espaço)
